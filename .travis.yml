@@ -10,7 +10,7 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc # source is more or less similar to "execute"
-  - gcloud component update kubectl #install kubectl inside travis environment
+  - gcloud components update kubectl #install kubectl inside travis environment
   - gcloud auth activate-service-account --key-file service-account.json # autorizing the google cloud account
   - gcloud config set project multi-k8s-326906 # this one 'multi-k8s-326906' is the google cloud project name
   - gcloud config set compute/zone europe-central2-a
